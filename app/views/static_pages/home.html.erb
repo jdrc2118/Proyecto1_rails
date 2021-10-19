@@ -1,2 +1,34 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>Pagina home primer proyecto</h1>
+<p>This is the home page for the first project:
+<br><br><%= link_to 'Pagina 1: Basics', :action => :basics %><br>
+<%= link_to 'Pagina 2: Ruby', :action => :ruby %><br>
+<%= link_to 'Pagina 3: Git', :action => :git %>
+<body>
+    
+    <div class="container-clock">
+        <h1 id="time">00:00:00</h1>
+        <p id="date">date</p>
+    </div>
+
+</body>
+<br><script type="text/javascript">
+const time = document.getElementById('time');
+const date = document.getElementById('date');
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+const interval = setInterval(() => {
+
+    const local = new Date();
+    
+    let day = local.getDate(),
+        month = local.getMonth(),
+        year = local.getFullYear();
+
+    time.innerHTML = local.toLocaleTimeString();
+    date.innerHTML = `${day} ${monthNames[month]} ${year}`;
+
+}, 1000);
+</script>
+</p>
